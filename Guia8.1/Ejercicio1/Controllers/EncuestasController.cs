@@ -21,10 +21,11 @@ namespace Ejercicio1.Controllers
 
         // POST: api/Encuestas
         [HttpPost]
-        public void Post([FromBody]int anio)
+        public EncuestaDTO Post([FromBody]int anio)
         {
             EncuestaDTO dto = new EncuestaDTO() { Anio = anio };
-            _service.CrearEncuesta(dto);
+            _service.AbrirNuevaEncuesta(dto);
+            return dto;
         }
 
     }

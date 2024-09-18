@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EncuestasLib.Models
 {
-    internal class RespuestasServices
+    public class RespuestasServices
     {
     }
 }

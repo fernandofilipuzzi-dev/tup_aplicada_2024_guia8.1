@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 using EncuestasLib;
 using EncuestasLib.Models;
+using Newtonsoft.Json;
 
 namespace EncuestasForm
 {
@@ -107,6 +108,8 @@ namespace EncuestasForm
                         if (response.IsSuccessStatusCode)
                         {
                             string responseContent = await response.Content.ReadAsStringAsync();
+
+                            var resultado=JsonConvert.DeserializeObject<EncuestaDTO>(responseContent);
 
                             MessageBox.Show("Registro Realizado");
                         }

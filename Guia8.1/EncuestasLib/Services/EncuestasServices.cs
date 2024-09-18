@@ -1,5 +1,6 @@
 ﻿using EncuestasLib.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace EncuestasLib.Services
@@ -8,7 +9,7 @@ namespace EncuestasLib.Services
     {
         static public List<EncuestaDTO> encuestas = new List<EncuestaDTO>();
 
-        public EncuestaDTO CrearEncuesta(EncuestaDTO dto)
+        public EncuestaDTO AbrirNuevaEncuesta(EncuestaDTO dto)
         {
             
             var buscado = BuscarEncuestaPorAnio(dto.Anio);
@@ -16,6 +17,7 @@ namespace EncuestasLib.Services
             if (buscado == null)
             {
                 encuestas.Add(dto);
+                dto.EstaAbierta = true;
                 return dto;
             }
 
@@ -30,6 +32,45 @@ namespace EncuestasLib.Services
                 if (encuestas[n].Anio == anio)
                     return encuestas[n];
             }
+            return null;
+        }
+
+        /// <summary>
+        /// devuelve la última encuesta en estado abierto
+        /// </summary>
+        /// <returns></returns>
+        public EncuestaDTO BuscarEncuestaVigente()
+        {
+            var lista = encuestas.OrderByDescending(e => e.Anio).Where(e => e.EstaAbierta = true).ToList();
+            if (lista.Count > 0) return lista[0];
+            return null;
+        }
+
+        private void ProcesarEncuesta(EncuestaDTO e)
+        {
+            int cantBici = 0;
+            int cantAuto = 0;
+            int cantPublico = 0;
+
+            foreach (var r in e.Respuestas)
+            {
+                if (r.UsaBicleta) cantBici++;
+            }
+        }
+
+        public EncuestaDTO CerrarEncuestaVigente()
+        {
+            var buscado = BuscarEncuestaVigente();
+
+            if (buscado != null)
+            {
+                buscado.EstaAbierta = false;
+          
+                
+
+                return buscado;
+            }
+
             return null;
         }
     }

@@ -57,10 +57,10 @@
 <XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="d975Z4iS0UuCNR/ZThTOsgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">320</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">344</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">140</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">195</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">108</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">121</XPD:ATTR>
 <XPD:REF name="Model">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="XiJ7x37zo0e01NsjFoNOXgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="vcjMMoXLP0GMkBBpAaydogAA">
@@ -88,8 +88,8 @@
 <XPD:OBJ name="OwnedViews[1]" type="UMLClassView" guid="ftqrAg0Zj0S9l9VHNiB/XgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">572</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">232</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">584</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">204</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">149</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">108</XPD:ATTR>
 <XPD:REF name="Model">9RhUlD4oIEiGTyqexeX5MAAA</XPD:REF>
@@ -119,7 +119,7 @@
 <XPD:OBJ name="OwnedViews[2]" type="UMLAssociationView" guid="hktS7x2QwEW9ON4GXAYvjwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">572,255;514,232</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">584,238;538,226</XPD:ATTR>
 <XPD:REF name="Model">XZiHxKq8skWW0LbVWyTeXQAA</XPD:REF>
 <XPD:REF name="Head">d975Z4iS0UuCNR/ZThTOsgAA</XPD:REF>
 <XPD:REF name="Tail">ftqrAg0Zj0S9l9VHNiB/XgAA</XPD:REF>
@@ -285,27 +285,32 @@
 <XPD:REF name="Associations[0]">5RpBH2h8ckaY9CrZaDO+XgAA</XPD:REF>
 <XPD:REF name="Associations[1]">bGX4PzqlSkegF5UhFoeXqAAA</XPD:REF>
 <XPD:REF name="Associations[2]">bFrbcacDPkKpBnTYkdY9pgAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">6</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="qaJnd7N4okK6mIA2oLdxcQAA">
 <XPD:ATTR name="Name" type="string">Anio</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="Owner">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="kUXHc9NT00+Rko/WekmV6AAA">
+<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="Ud7PVdNBIkCNvxbyLt48FwAA">
+<XPD:ATTR name="Name" type="string">EstaAbierta</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">bool</XPD:ATTR>
+<XPD:REF name="Owner">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="kUXHc9NT00+Rko/WekmV6AAA">
 <XPD:ATTR name="Name" type="string">CantidadContactables</XPD:ATTR>
 <XPD:REF name="Owner">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="wL6NUrB/HUumF3TXRNiGjAAA">
+<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="wL6NUrB/HUumF3TXRNiGjAAA">
 <XPD:ATTR name="Name" type="string">PorcentajeBicicleta</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">double</XPD:ATTR>
 <XPD:REF name="Owner">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="BhUK/5o8TEyvSiLYX0n9bQAA">
+<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="BhUK/5o8TEyvSiLYX0n9bQAA">
 <XPD:ATTR name="Name" type="string">PorcentajeAutomovil</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">double</XPD:ATTR>
 <XPD:REF name="Owner">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="+W+RBP69o021z7MlH0vy5QAA">
+<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="+W+RBP69o021z7MlH0vy5QAA">
 <XPD:ATTR name="Name" type="string">PorcentajeTransportePublico</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">double</XPD:ATTR>
 <XPD:REF name="Owner">4TLoHSU+70SGTgE9V7DuQAAA</XPD:REF>
