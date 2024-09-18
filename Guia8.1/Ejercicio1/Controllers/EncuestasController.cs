@@ -1,4 +1,5 @@
-﻿using EncuestasLib.Models;
+﻿using EncuestasBase.Models;
+using EncuestasLib.Models;
 using EncuestasLib.Services;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,18 @@ namespace Ejercicio1.Controllers
     {
         EncuestaService _service=new EncuestaService();
 
+        // POST: api/Encuestas
         [HttpGet]
+        [Route("api/Encuestas/{anio}")]
         public EncuestaDTO Get(int anio)
         {
             return _service.BuscarEncuestaPorAnio(anio);
+        }
+
+        [HttpGet]
+        public EncuestaDTO Get()
+        {
+            return _service.BuscarEncuestaVigente();
         }
 
         // POST: api/Encuestas
@@ -25,6 +34,14 @@ namespace Ejercicio1.Controllers
         {
             EncuestaDTO dto = new EncuestaDTO() { Anio = anio };
             _service.AbrirNuevaEncuesta(dto);
+            return dto;
+        }
+
+        // POST: api/Encuestas
+        [HttpPut]
+        public EncuestaDTO Put()
+        {
+            EncuestaDTO dto=_service.CerrarEncuestaVigente();
             return dto;
         }
 

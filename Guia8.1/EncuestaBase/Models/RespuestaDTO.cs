@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasLib.Models
+namespace EncuestasBase.Models
 {
     public class RespuestaDTO
     {
-        public bool UsaBicleta{ get;set; }
+        public bool UsaBicicleta{ get;set; }
         public bool UsaAutomovil { get; set; }
         public bool UsaTransportePublico { get; set; }
         public string Email { get; set; }
-        public double DistanciaOrigen { get; set; }
         public double DistanciaDestino { get; set; }
+        public string DomicilioOrigen { get; set; }
+        public string DomicilioDestino { get; set; }
     }
 }

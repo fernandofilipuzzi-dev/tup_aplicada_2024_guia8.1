@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EncuestasBase.Models;
+using EncuestasLib.Models;
+using EncuestasLib.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,31 +12,15 @@ namespace Ejercicio1.Controllers
 {
     public class RespuestasController : ApiController
     {
-        // GET: api/Respuestas
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Respuestas/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+        EncuestaService _service = new EncuestaService();
 
         // POST: api/Respuestas
-        public void Post([FromBody]string value)
+        [HttpPost]
+        public void Post([FromBody]RespuestaDTO respuesta)
         {
+            EncuestaDTO dto = _service.BuscarEncuestaVigente();
+            dto.Respuestas.Add(respuesta);
         }
 
-        // PUT: api/Respuestas/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Respuestas/5
-        public void Delete(int id)
-        {
-        }
     }
 }

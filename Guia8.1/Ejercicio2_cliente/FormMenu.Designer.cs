@@ -30,36 +30,39 @@ namespace EncuestasForm
         private void InitializeComponent()
         {
             this.btnRegistroDeEncuesta = new System.Windows.Forms.Button();
-            this.btnInforme = new System.Windows.Forms.Button();
+            this.btnCerrarEncuesta = new System.Windows.Forms.Button();
             this.btnListadoContactables = new System.Windows.Forms.Button();
             this.btnAltaEncuesta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRegistroDeEncuesta
             // 
-            this.btnRegistroDeEncuesta.Location = new System.Drawing.Point(97, 76);
+            this.btnRegistroDeEncuesta.Location = new System.Drawing.Point(129, 94);
+            this.btnRegistroDeEncuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistroDeEncuesta.Name = "btnRegistroDeEncuesta";
-            this.btnRegistroDeEncuesta.Size = new System.Drawing.Size(183, 38);
+            this.btnRegistroDeEncuesta.Size = new System.Drawing.Size(244, 47);
             this.btnRegistroDeEncuesta.TabIndex = 0;
             this.btnRegistroDeEncuesta.Text = "Registro De Encuesta";
             this.btnRegistroDeEncuesta.UseVisualStyleBackColor = true;
             this.btnRegistroDeEncuesta.Click += new System.EventHandler(this.btnRegistroDeEncuesta_Click);
             // 
-            // btnInforme
+            // btnCerrarEncuesta
             // 
-            this.btnInforme.Location = new System.Drawing.Point(97, 120);
-            this.btnInforme.Name = "btnInforme";
-            this.btnInforme.Size = new System.Drawing.Size(183, 38);
-            this.btnInforme.TabIndex = 1;
-            this.btnInforme.Text = "Resultados";
-            this.btnInforme.UseVisualStyleBackColor = true;
-            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            this.btnCerrarEncuesta.Location = new System.Drawing.Point(129, 148);
+            this.btnCerrarEncuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarEncuesta.Name = "btnCerrarEncuesta";
+            this.btnCerrarEncuesta.Size = new System.Drawing.Size(244, 47);
+            this.btnCerrarEncuesta.TabIndex = 1;
+            this.btnCerrarEncuesta.Text = "Cerrar Encuesta";
+            this.btnCerrarEncuesta.UseVisualStyleBackColor = true;
+            this.btnCerrarEncuesta.Click += new System.EventHandler(this.btnCerrarEncuesta_Click);
             // 
             // btnListadoContactables
             // 
-            this.btnListadoContactables.Location = new System.Drawing.Point(97, 164);
+            this.btnListadoContactables.Location = new System.Drawing.Point(129, 202);
+            this.btnListadoContactables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnListadoContactables.Name = "btnListadoContactables";
-            this.btnListadoContactables.Size = new System.Drawing.Size(183, 38);
+            this.btnListadoContactables.Size = new System.Drawing.Size(244, 47);
             this.btnListadoContactables.TabIndex = 2;
             this.btnListadoContactables.Text = "Listado contactables";
             this.btnListadoContactables.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@ namespace EncuestasForm
             // 
             // btnAltaEncuesta
             // 
-            this.btnAltaEncuesta.Location = new System.Drawing.Point(97, 32);
+            this.btnAltaEncuesta.Location = new System.Drawing.Point(129, 39);
+            this.btnAltaEncuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAltaEncuesta.Name = "btnAltaEncuesta";
-            this.btnAltaEncuesta.Size = new System.Drawing.Size(183, 38);
+            this.btnAltaEncuesta.Size = new System.Drawing.Size(244, 47);
             this.btnAltaEncuesta.TabIndex = 3;
             this.btnAltaEncuesta.Text = "Alta Encuesta";
             this.btnAltaEncuesta.UseVisualStyleBackColor = true;
@@ -77,14 +81,18 @@ namespace EncuestasForm
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 232);
+            this.ClientSize = new System.Drawing.Size(501, 286);
             this.Controls.Add(this.btnAltaEncuesta);
             this.Controls.Add(this.btnListadoContactables);
-            this.Controls.Add(this.btnInforme);
+            this.Controls.Add(this.btnCerrarEncuesta);
             this.Controls.Add(this.btnRegistroDeEncuesta);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secretaría de transporte de su magestad!";
             this.ResumeLayout(false);
 
@@ -93,7 +101,7 @@ namespace EncuestasForm
         #endregion
 
         private System.Windows.Forms.Button btnRegistroDeEncuesta;
-        private System.Windows.Forms.Button btnInforme;
+        private System.Windows.Forms.Button btnCerrarEncuesta;
         private System.Windows.Forms.Button btnListadoContactables;
         private System.Windows.Forms.Button btnAltaEncuesta;
     }

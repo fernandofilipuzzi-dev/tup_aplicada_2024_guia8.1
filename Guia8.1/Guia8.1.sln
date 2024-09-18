@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasLib", "EncuestasLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2_cliente", "Ejercicio2_cliente\Ejercicio2_cliente.csproj", "{1DC7AFE8-BA67-4D28-8BB3-F21D5138B1A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestaBase", "EncuestaBase\EncuestaBase.csproj", "{8E89DDF9-1090-409B-89A9-C30B2026F3DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1DC7AFE8-BA67-4D28-8BB3-F21D5138B1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC7AFE8-BA67-4D28-8BB3-F21D5138B1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC7AFE8-BA67-4D28-8BB3-F21D5138B1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E89DDF9-1090-409B-89A9-C30B2026F3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E89DDF9-1090-409B-89A9-C30B2026F3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E89DDF9-1090-409B-89A9-C30B2026F3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E89DDF9-1090-409B-89A9-C30B2026F3DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

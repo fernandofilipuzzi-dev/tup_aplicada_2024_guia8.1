@@ -239,6 +239,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EncuestaBase\EncuestaBase.csproj">
+      <Project>{8e89ddf9-1090-409b-89a9-c30b2026f3dd}</Project>
+      <Name>EncuestaBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EncuestasLib\EncuestasLib.csproj">
       <Project>{ffe62e60-1aa5-448d-80ea-7ceebc9166b1}</Project>
       <Name>EncuestasLib</Name>

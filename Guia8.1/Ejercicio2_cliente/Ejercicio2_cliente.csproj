@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EncuestasClient.cs" />
     <EmbeddedResource Include="FormDatosEncuesta.resx">
       <DependentUpon>FormDatosEncuesta.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,12 +127,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EncuestasLib\EncuestasLib.csproj">
-      <Project>{ef3f1983-63ef-4c38-b67b-0d4da0c250e5}</Project>
-      <Name>EncuestasLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
@@ -142,6 +137,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncuestaBase\EncuestaBase.csproj">
+      <Project>{8e89ddf9-1090-409b-89a9-c30b2026f3dd}</Project>
+      <Name>EncuestaBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

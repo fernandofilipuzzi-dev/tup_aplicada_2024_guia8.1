@@ -36,9 +36,10 @@ namespace EncuestasForm
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCerrar.Location = new System.Drawing.Point(288, 310);
+            this.btnCerrar.Location = new System.Drawing.Point(264, 279);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -48,19 +49,24 @@ namespace EncuestasForm
             this.lbxVer.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxVer.FormattingEnabled = true;
             this.lbxVer.ItemHeight = 18;
-            this.lbxVer.Location = new System.Drawing.Point(12, 12);
+            this.lbxVer.Location = new System.Drawing.Point(16, 15);
+            this.lbxVer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbxVer.Name = "lbxVer";
-            this.lbxVer.Size = new System.Drawing.Size(633, 292);
+            this.lbxVer.Size = new System.Drawing.Size(638, 256);
             this.lbxVer.TabIndex = 1;
             // 
             // FormInforme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 335);
+            this.ClientSize = new System.Drawing.Size(668, 318);
             this.Controls.Add(this.lbxVer);
             this.Controls.Add(this.btnCerrar);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormInforme";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormInforme";
             this.ResumeLayout(false);
 

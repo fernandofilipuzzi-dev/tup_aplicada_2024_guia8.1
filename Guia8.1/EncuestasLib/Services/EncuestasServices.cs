@@ -1,4 +1,5 @@
-﻿using EncuestasLib.Models;
+﻿using EncuestasBase.Models;
+using EncuestasLib.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,10 +52,24 @@ namespace EncuestasLib.Services
             int cantBici = 0;
             int cantAuto = 0;
             int cantPublico = 0;
+            int cantContactables=0;
 
             foreach (var r in e.Respuestas)
             {
-                if (r.UsaBicleta) cantBici++;
+                if (r.UsaBicicleta) cantBici++;
+                if (r.UsaAutomovil) cantAuto++;
+                if (r.UsaTransportePublico) cantPublico++;
+                if (string.IsNullOrEmpty(r.Email)) cantContactables++;
+            }
+            e.CantidadContactables = cantContactables;
+
+            int total = cantAuto + cantBici + cantPublico;
+
+            if (total > 0)
+            {
+                e.PorcentajeBicleta = 100.0*cantBici / total ;
+                e.PorcentajeAutomovil = 100.0 * cantAuto / total;
+                e.PorcentajeTransportePublico = 100.0 * cantPublico / total;
             }
         }
 
@@ -65,9 +80,9 @@ namespace EncuestasLib.Services
             if (buscado != null)
             {
                 buscado.EstaAbierta = false;
-          
-                
 
+                ProcesarEncuesta(buscado);
+                
                 return buscado;
             }
 
