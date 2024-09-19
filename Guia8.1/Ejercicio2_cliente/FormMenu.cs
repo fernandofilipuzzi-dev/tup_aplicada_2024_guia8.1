@@ -86,6 +86,9 @@ namespace EncuestasForm
                 await new EncuestasClient().CerrarEncuestaVigente();
             }
 
+
+            //en edición
+
                 //FormInforme fInforme = new FormInforme();
 
                 //fInforme.Text = "Informe.";

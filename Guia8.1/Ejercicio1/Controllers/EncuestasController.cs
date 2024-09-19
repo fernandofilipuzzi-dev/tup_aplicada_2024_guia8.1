@@ -33,7 +33,7 @@ namespace Ejercicio1.Controllers
         public EncuestaDTO Post([FromBody]int anio)
         {
             EncuestaDTO dto = new EncuestaDTO() { Anio = anio };
-            _service.AbrirNuevaEncuesta(dto);
+            dto = _service.AbrirNuevaEncuesta(dto);
             return dto;
         }
 

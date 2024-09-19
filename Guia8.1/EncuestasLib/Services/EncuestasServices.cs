@@ -10,12 +10,14 @@ namespace EncuestasLib.Services
     {
         static public List<EncuestaDTO> encuestas = new List<EncuestaDTO>();
 
+        //reglas:
+        //no debe haber abierta otra encuesta o 
+        //no debe haber otra encuesta con el mismo año
         public EncuestaDTO AbrirNuevaEncuesta(EncuestaDTO dto)
         {
-            
             var buscado = BuscarEncuestaPorAnio(dto.Anio);
 
-            if (buscado == null)
+            if (buscado == null || buscado.Anio!=dto.Anio && buscado.EstaAbierta==false)
             {
                 encuestas.Add(dto);
                 dto.EstaAbierta = true;
@@ -28,11 +30,11 @@ namespace EncuestasLib.Services
         public EncuestaDTO BuscarEncuestaPorAnio(int anio)
         {
             int n = 0;
-            while (n < encuestas.Count)
-            {
-                if (encuestas[n].Anio == anio)
-                    return encuestas[n];
-            }
+
+            List<EncuestaDTO> lista=encuestas.Where(e => e.Anio == anio).ToList();
+            if (lista.Count > 0)
+                return lista[0];
+
             return null;
         }
 
