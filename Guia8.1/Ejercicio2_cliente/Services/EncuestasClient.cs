@@ -14,6 +14,7 @@ namespace EncuestasForm.Services
     {
         public bool HuboError { get; set; }
         public string Mensaje { get; set; }
+        public object Contenido { get; set; }
     }
 
     public class EncuestasClient
@@ -48,7 +49,7 @@ namespace EncuestasForm.Services
                     else
                     {
                         estado.HuboError = true;
-                        estado.Mensaje=$"Error: {response.StatusCode}";
+                        estado.Mensaje=$"{response.StatusCode}";
                     }
                 }
                 catch (Exception ex)
@@ -60,8 +61,9 @@ namespace EncuestasForm.Services
             return estado;
         }
 
-        public async Task RegistrarRespuesta(RespuestaDTO nuevo)
+        public async Task<Estado> RegistrarRespuesta(RespuestaDTO nuevo)
         {
+            var estado=new Estado();
             using (var client = new HttpClient())
             {
                 string url = "https://localhost:44377/api/Respuestas";
@@ -76,25 +78,26 @@ namespace EncuestasForm.Services
                     if (response.IsSuccessStatusCode)
                     {
                         string responseContent = await response.Content.ReadAsStringAsync();
-
-                        MessageBox.Show("Encuesta registrada");
                     }
                     else
                     {
-                        MessageBox.Show($"Error: {response.StatusCode}");
+                        estado.HuboError = true;
+                        estado.Mensaje=$"Error: {response.StatusCode}";
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al hacer la solicitud: {ex.Message}");
+                    estado.HuboError = true;
+                    estado.Mensaje = $"{ex.Message}\r\n{ex?.InnerException?.Message}";
                 }
             }
+            return estado;
         }
 
-        public async Task<EncuestaDTO> BuscarEncuestaAbierta()
+        public async Task<Estado> BuscarEncuestaAbierta()
         {
-            EncuestaDTO resultado = null;
-
+            var estado = new Estado();
+            
             using (var client = new HttpClient())
             {
                 string url = "https://localhost:44377/api/Encuestas";
@@ -107,21 +110,21 @@ namespace EncuestasForm.Services
                     {
                         string responseContent = await response.Content.ReadAsStringAsync();
 
-                        resultado = JsonConvert.DeserializeObject<EncuestaDTO>(responseContent);
-
-                        MessageBox.Show("Registro Realizado");
+                        estado.Contenido= JsonConvert.DeserializeObject<EncuestaDTO>(responseContent);
                     }
                     else
                     {
-                        MessageBox.Show($"Error: {response.StatusCode}");
+                        estado.HuboError = true;
+                        estado.Mensaje = $"Error: {response.StatusCode}";
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al hacer la solicitud: {ex.Message}");
+                    estado.HuboError = true;
+                    estado.Mensaje = $"{ex.Message}\r\n{ex?.InnerException?.Message}";
                 }
             }
-            return resultado;
+            return estado;
         }
 
         public async Task<EncuestaDTO> CerrarEncuestaVigente()

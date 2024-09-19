@@ -30,16 +30,9 @@ namespace EncuestasForm
             {
                 int anio = Convert.ToInt32(fDatos.tbAnio.Text);
 
-                Estado estado=await new EncuestasClient().AbrirEncuesta(anio);
+                var estado=await new EncuestasClient().AbrirEncuesta(anio);
 
-                if (estado.HuboError)
-                {
-                    MessageBox.Show(estado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Encuesta dada de alta", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MostrarResultados(estado);
             }
         }
 
@@ -51,6 +44,7 @@ namespace EncuestasForm
             {
                 RespuestaDTO nuevo = new RespuestaDTO();
 
+                #region parseo de datos
                 nuevo.UsaBicicleta = fRegistro.chkUsaBicicleta.Checked;
                 nuevo.UsaAutomovil = fRegistro.chkUsaAuto.Checked;
                 nuevo.UsaTransportePublico = fRegistro.chkTranspPub.Checked;
@@ -58,10 +52,12 @@ namespace EncuestasForm
                 nuevo.DomicilioOrigen= fRegistro.tbDomicilioOrigen.Text;
                 nuevo.DomicilioDestino = fRegistro.tbDomicilioDestino.Text;
                 nuevo.Email = fRegistro.tbEmail.Text;
+                #endregion
 
                 bool puedeSerContactado = fRegistro.chkPuedeSerContactado.Checked;
 
-                await new EncuestasClient().RegistrarRespuesta(nuevo);
+                var estado=await new EncuestasClient().RegistrarRespuesta(nuevo);
+                MostrarResultados(estado);
             }
 
             fRegistro.Dispose();
@@ -71,15 +67,20 @@ namespace EncuestasForm
         {
             FormDatosEncuesta fDatos = new FormDatosEncuesta();
 
-            EncuestaDTO resultado =await new EncuestasClient().BuscarEncuestaAbierta();
+            var estado = await new EncuestasClient().BuscarEncuestaAbierta();
 
-            if (resultado == null)
+            if (estado.HuboError==false && estado.Contenido == null)
             {
-                MessageBox.Show("No hay encuesta abierta");
+                MessageBox.Show("No hay encuesta abierta", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if(estado.HuboError == true )
+            {
+                MessageBox.Show(estado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            fDatos.tbAnio.Text=resultado.Anio.ToString();
+            fDatos.tbAnio.Text=((EncuestaDTO)(estado.Contenido)).Anio.ToString();
             if (fDatos.ShowDialog() == DialogResult.OK)
             {
                 await new EncuestasClient().CerrarEncuestaVigente();
@@ -120,7 +121,16 @@ namespace EncuestasForm
             //fInforme.Dispose();
         }
 
-       
-        
+        private void MostrarResultados(Estado estado)
+        {
+            if (estado.HuboError)
+            {
+                MessageBox.Show(estado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Encuesta dada de alta", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
